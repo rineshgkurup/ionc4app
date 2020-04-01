@@ -11,6 +11,10 @@ pool:
 
 steps:
 
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'install @ionic/cli'
 
 - task: Npm@1
   inputs:
