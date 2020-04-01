@@ -13,26 +13,31 @@ steps:
 
 
 - task: Npm@1
+  displayName: 'Install Ionic CLI'
   inputs:
     command: 'custom'
     customCommand: 'install @ionic/cli'
 
 - task: Npm@1
+  displayName: 'Install Cordova'
   inputs:
     command: 'custom'
     customCommand: 'install cordova'
 
 - task: Npm@1
+  displayName: 'Remove Default Android platform'
   inputs:
     command: 'custom'
     customCommand: 'run remove'
 
 - task: Npm@1
+  displayName: 'Run Ionic prepare command for Android'
   inputs:
     command: 'custom'
     customCommand: 'run setup'
 
 - task: Npm@1
+  displayName: 'Build'
   inputs:
     command: 'custom'
     customCommand: 'run build'
