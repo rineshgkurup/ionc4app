@@ -22,6 +22,12 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'install @ionic/cli'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'install cordova'
+
 - task: Npm@1
   inputs:
     command: 'custom'
