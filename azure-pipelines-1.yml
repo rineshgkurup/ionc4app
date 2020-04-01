@@ -37,14 +37,15 @@ steps:
     command: 'custom'
     customCommand: 'run build'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/platforms/android/app/build/outputs/apk/debug'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    CleanTargetFolder: true
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: '$(Build.SourcesDirectory)/platforms/android/app/build/outputs/apk/debug/app-debug.apk'
-    publishLocation: 'pipeline'
