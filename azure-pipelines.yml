@@ -33,11 +33,12 @@ steps:
     command: 'custom'
     customCommand: 'run setup'
 
-- task: Npm@1
+- task: CordovaBuild@1
   inputs:
-    command: 'custom'
-    customCommand: 'run build'
-    
+    platform: 'android'
+    configuration: '$(Configuration)'
+    outputPattern: 'bin'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
