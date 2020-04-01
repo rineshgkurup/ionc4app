@@ -43,3 +43,8 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: '$(Build.SourcesDirectory)/platforms/android/app/build/outputs/apk/debug/app-debug.apk'
+    publishLocation: 'pipeline'
