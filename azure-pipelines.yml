@@ -17,13 +17,16 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'install @ionic/cli'
-- task: Bash@3
+- task: Npm@1
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      ionic --help
+    command: 'custom'
+    customCommand: 'setup'
 
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'build'
+    
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
