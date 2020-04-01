@@ -18,6 +18,7 @@ steps:
       # Write your commands here
       
       echo $ANDROID_HOME
+      echo $PATH
 
 # - task: Npm@1
 #   inputs:
