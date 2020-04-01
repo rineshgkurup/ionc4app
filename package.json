@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ionic cordova build android",
-    "setup": "ionic cordova prepare android",
+    "setup": "ionic cordova prepare android --no-interactive --confirm",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
