@@ -13,31 +13,30 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-# - task: Npm@1
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'install'
-
-# - task: Npm@1
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'install @ionic/cli'
-
-# - task: Npm@1
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'install cordova'
-
-# - task: Npm@1
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'run setup'
-
-- task: CordovaBuild@1
+- task: Npm@1
   inputs:
-    platform: 'android'
-    configuration: '$(Configuration)'
-    outputPattern: 'bin'
+    command: 'custom'
+    customCommand: 'install'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'install @ionic/cli'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'install cordova'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'run setup'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'run build'
 
 - task: PublishBuildArtifacts@1
   inputs:
