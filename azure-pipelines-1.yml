@@ -11,44 +11,25 @@ pool:
 
 steps:
 
-- task: Bash@3
+
+- task: Npm@1
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      echo $ANDROID_HOME
-      echo $PATH
-      android --help
+    command: 'custom'
+    customCommand: 'install cordova'
 
-# - task: Npm@1
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'install'
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'run setup'
 
-# - task: Npm@1
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'install @ionic/cli'
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'run build'
 
-# - task: Npm@1
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'install cordova'
-
-# - task: Npm@1
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'run setup'
-
-# - task: Npm@1
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'run build'
-
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#     ArtifactName: 'drop'
-#     publishLocation: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 
