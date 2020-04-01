@@ -25,6 +25,11 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
+    customCommand: 'run remove'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
     customCommand: 'run setup'
 
 - task: Npm@1
