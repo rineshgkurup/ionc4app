@@ -6,8 +6,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ionic cordova build android",
+    "setup": "ionic cordova prepare android --no-interactive --confirm",
+    "add": "ionic cordova platform add android",
+    "remove": "ionic cordova platform remove android",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
