@@ -10,6 +10,8 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,8 +19,9 @@ import { AppComponent } from './app.component';
   providers: [
     StatusBar,
     SplashScreen,
-	DatePicker,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    DatePicker,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Deeplinks
   ],
   bootstrap: [AppComponent]
 })
